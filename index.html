@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Itz0Cat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <button class="expand-btn" onclick="toggleSidebar()">☰</button>
+    <a href="#about" class="sidebar-item">About Me</a>
+    <a href="#vlogs" class="sidebar-item">Vlogs</a>
+    <a href="#projects" class="sidebar-item">Projects</a>
+    <a href="#" class="sidebar-item" id="admin-login-btn" onclick="openAdminLogin()">Admin</a>
+  </div>
+
+  <div class="content">
+    <!-- Profile Panel -->
+    <div class="panel profile-panel">
+      <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
+      <h2 class="typing">Welcome to My Website</h2>
+    </div>
+
+    <!-- About Me Panel -->
+    <div class="panel about-panel" id="about">
+      <h2>About Me</h2>
+      <p id="about-content">  
+Hey there! 👋 I'm Itz Cat, a passionate and versatile developer specializing in Discord server management, game development, and website design. I love creating innovative projects and sharing them with the community. While I'm always learning and improving, I take pride in my Dev Studio, where I bring ideas to life. When I'm not coding or managing servers, I enjoy exploring new technologies and connecting with like-minded individuals. Let's build something amazing together! 🛠️✨</p>
+    </div>
+
+    <!-- Vlogs Panel -->
+<div class="panel vlogs-panel" id="vlogs">
+  <h2>My Vlogs</h2>
+  <div class="vlog-list" id="vlogs-content">
+    <!-- Vlog 1 -->
+    <div class="vlog-item">
+      <h3>Journey into Game Development</h3>
+      <p>
+        In this vlog, I share my experiences and challenges in game development. From brainstorming ideas to coding and design, you'll get an inside look at how I bring my projects to life. Watch as I dive into the creative process, troubleshoot bugs, and celebrate milestones!
+      </p>
+    </div>
+
+    <!-- Vlog 2 -->
+    <div class="vlog-item">
+      <h3>Building a Discord Server from Scratch</h3>
+      <p>
+        Join me as I guide you through the process of creating a professional Discord server. Whether it's setting up roles, adding bots, or designing a welcoming community, I’ll share tips and tricks to make your server stand out.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Projects Panel -->
+<div class="panel projects-panel" id="projects">
+  <h2>Projects</h2>
+  <div class="project-list" id="projects-content">
+    <!-- Project 1 -->
+    <div class="project-item">
+      <h3>BELauncher</h3>
+      <p>
+        A custom launcher for Minecraft Bedrock Edition with a live Xbox account switch feature. Designed for seamless gameplay, BELauncher offers a user-friendly interface and optimized performance.
+        <br><strong>Status:</strong> In Progress 🛠️
+      </p>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-item">
+      <h3>Dev Studio Website</h3>
+      <p>
+        A sleek, modern website designed for my Dev Studio. It’s where I showcase my skills, offer services, and connect with clients. The site features a responsive layout, vibrant design, and smooth navigation.
+        <br><a href="https://itz0cat.github.io/OfcDevStudio/" target="_blank">Visit Dev Studio</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Admin Login and Panel -->
+  <section id="admin-login" class="admin-section" style="display: none;">
+    <h2>Admin Login</h2>
+    <input type="password" id="admin-password" placeholder="Enter Admin Password">
+    <button onclick="checkAdminPassword()">Login</button>
+    <button onclick="closeAdminLogin()">Close</button>
+  </section>
+
+  <section id="admin-panel" class="admin-section" style="display: none;">
+    <h2>Admin Panel</h2>
+    <label>About Me:</label>
+    <textarea id="edit-about" placeholder="Edit About Me content"></textarea>
+    
+    <label>Vlogs:</label>
+    <textarea id="edit-vlogs" placeholder="Edit Vlogs content"></textarea>
+
+    <label>Projects:</label>
+    <textarea id="edit-projects" placeholder="Edit Projects content"></textarea>
+
+    <button onclick="saveChanges()">Save Changes</button>
+    <button onclick="logoutAdmin()">Logout</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

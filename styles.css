@@ -1,0 +1,164 @@
+/* styles.css */
+
+/* Reset some default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  background-color: #333;
+  color: #fff;
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  transition: width 0.3s;
+}
+
+.sidebar .expand-btn {
+  font-size: 20px;
+  background: none;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar .sidebar-item {
+  padding: 15px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.sidebar .sidebar-item:hover {
+  background-color: #575757;
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar.collapsed .sidebar-item {
+  display: none;
+}
+
+/* Content area styling */
+.content {
+  margin-left: 220px;
+  padding: 20px;
+  width: calc(100% - 220px);
+  transition: margin-left 0.3s;
+}
+
+.sidebar.collapsed ~ .content {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+}
+
+/* Panel Styling */
+.panel {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-panel .profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* Typing Animation */
+.typing {
+  font-size: 24px;
+  text-align: center;
+  color: #333;
+  animation: typing 3s steps(40, end), blink-caret 0.5s step-end infinite;
+}
+
+/* Typing animation keyframes */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #333; }
+}
+
+/* Admin Sections */
+.admin-section {
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-section h2 {
+  margin-bottom: 15px;
+}
+
+.admin-section input, .admin-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.admin-section button {
+  padding: 10px 15px;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-section button:hover {
+  background-color: #555;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .sidebar.collapsed {
+    width: 0;
+  }
+
+  .content {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+  }
+
+  .sidebar.collapsed ~ .content {
+    margin-left: 20px;
+    width: calc(100% - 20px);
+  }
+}

@@ -1,164 +1,95 @@
-/* styles.css */
+/* ❄️ Cozy Anime Style (Blue Theme) ❄️ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sawarabi+Mincho&display=swap');
 
-/* Reset some default margins and paddings */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body styling */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
-  display: flex;
+    background-color: #f0f8ff;
+    color: #2c3e50;
+    font-family: 'Sawarabi Mincho', 'Poppins', sans-serif;
+    text-align: center;
+    padding: 20px;
 }
 
-/* Sidebar Styling */
-.sidebar {
-  background-color: #333;
-  color: #fff;
-  width: 200px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 20px;
-  transition: width 0.3s;
+/* ❄️ Headings */
+h1 {
+    font-size: 32px;
+    color: #4a90e2;
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 12px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(74, 144, 226, 0.2);
 }
 
-.sidebar .expand-btn {
-  font-size: 20px;
-  background: none;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
+h2 {
+    font-size: 24px;
+    color: #4a90e2;
+    margin-top: 20px;
 }
 
-.sidebar .sidebar-item {
-  padding: 15px 20px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-  transition: background 0.3s;
+/* ❄️ Paragraphs & Links */
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #34495e;
 }
 
-.sidebar .sidebar-item:hover {
-  background-color: #575757;
+a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-/* Collapsed Sidebar */
-.sidebar.collapsed {
-  width: 60px;
+a:hover {
+    text-decoration: underline;
+    color: #1e66a1;
 }
 
-.sidebar.collapsed .sidebar-item {
-  display: none;
+/* ❄️ Code Blocks */
+pre {
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 5px solid #4a90e2;
+    font-family: monospace;
+    font-size: 16px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Content area styling */
-.content {
-  margin-left: 220px;
-  padding: 20px;
-  width: calc(100% - 220px);
-  transition: margin-left 0.3s;
+/* ❄️ Buttons */
+button {
+    background: #4a90e2;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
-.sidebar.collapsed ~ .content {
-  margin-left: 80px;
-  width: calc(100% - 80px);
+button:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(74, 144, 226, 0.3);
 }
 
-/* Panel Styling */
-.panel {
-  background-color: #fff;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* ❄️ Dropdown (Select) */
+select {
+    background: white;
+    border: 2px solid #4a90e2;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #2c3e50;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.profile-panel .profile-pic {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto 10px;
-}
-
-/* Typing Animation */
-.typing {
-  font-size: 24px;
-  text-align: center;
-  color: #333;
-  animation: typing 3s steps(40, end), blink-caret 0.5s step-end infinite;
-}
-
-/* Typing animation keyframes */
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: #333; }
-}
-
-/* Admin Sections */
-.admin-section {
-  background-color: #eee;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.admin-section h2 {
-  margin-bottom: 15px;
-}
-
-.admin-section input, .admin-section textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-}
-
-.admin-section button {
-  padding: 10px 15px;
-  color: #fff;
-  background-color: #333;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.admin-section button:hover {
-  background-color: #555;
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 60px;
-  }
-
-  .sidebar.collapsed {
-    width: 0;
-  }
-
-  .content {
-    margin-left: 80px;
-    width: calc(100% - 80px);
-  }
-
-  .sidebar.collapsed ~ .content {
-    margin-left: 20px;
-    width: calc(100% - 20px);
-  }
+select:hover {
+    border-color: #357abd;
 }
